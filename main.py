@@ -43,6 +43,9 @@ class QuemMatouBillGTeste(unittest.TestCase):
     def testeParametro3Errado(self):
         self.assertEqual(3, testarNumeros(5,3,1))
 
+    def teste2Erros(self):
+        self.assertRegex(str(testarNumeros(5,4,1)), "[23]")
+
 
 #1,1,1 : 2
 #1,2,1 : 2
