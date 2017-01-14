@@ -1,27 +1,46 @@
 # coding=utf8
 
 import unittest
+import random
 
 def existeNaLista(item,lista):
     list.index
 
 def testarNumeros(assassino,local,arma):
-    if (assassino == 5) and (local == 3) and (arma == 4):
-        return True
+    retorno= [] 
+    
+    if (assassino != 5):
+        retorno.append(1)
+
+    if (local != 3):
+        retorno.append(2)
+
+    if (arma != 4):
+        retorno.append(3)
+
+    if len(retorno) > 0:
+        return retorno[random.randrange(0, len(retorno))]
     else:
-        return False
-        
+        return 0
+   
 
 
 ############# teste ###############
 class QuemMatouBillGTeste(unittest.TestCase):
     def teste1(self):
-        self.assertEqual(True, testarNumeros(5,3,4))
+        self.assertEqual(0, testarNumeros(5,3,4))
 
     def teste2(self):
-        self.assertEqual(False, testarNumeros(1,2,3))
+        self.assertEqual(1, testarNumeros(1,2,3))
     
+    def testeParametro1Errado(self):
+        self.assertEqual(1, testarNumeros(1,3,4))
 
+    def testeParametro2Errado(self):
+        self.assertEqual(2, testarNumeros(5,1,4))
+
+    def testeParametro3Errado(self):
+        self.assertEqual(3, testarNumeros(5,3,1))
 
 
 #1,1,1 : 2
