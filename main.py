@@ -2,31 +2,14 @@
 
 import unittest
 
-
-def testeAssassino(assassino):
-    if assassino == 5:
-        return True
-    else:
-        return False
-
-def testeLocal(local):
-    if local == 3:
-        return True
-    else:
-        return False
-
-def testeArma(arma):
-    if arma == 4:
-        return True
-    else:
-        return False
+def existeNaLista(item,lista):
+    list.index
 
 def testarNumeros(assassino,local,arma):
-    
-    # o resulto certo eh 5,3,4
-    return testeAssassino(assassino) and testeLocal(local) and testeArma(arma)
-    
-
+    if (assassino == 5) and (local == 3) and (arma == 4):
+        return True
+    else:
+        return False
         
 
 
@@ -34,6 +17,10 @@ def testarNumeros(assassino,local,arma):
 class QuemMatouBillGTeste(unittest.TestCase):
     def teste1(self):
         self.assertEqual(True, testarNumeros(5,3,4))
+
+    def teste2(self):
+        self.assertEqual(False, testarNumeros(1,2,3))
+    
 
 
 
