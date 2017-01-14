@@ -2,6 +2,7 @@
 
 import unittest
 import random
+import re
 
 def existeNaLista(item,lista):
     list.index
@@ -31,7 +32,7 @@ class QuemMatouBillGTeste(unittest.TestCase):
         self.assertEqual(0, testarNumeros(5,3,4))
 
     def teste2(self):
-        self.assertEqual(1, testarNumeros(1,2,3))
+        self.assertRegex(str(testarNumeros(1,2,3)),"[123]")
     
     def testeParametro1Errado(self):
         self.assertEqual(1, testarNumeros(1,3,4))
